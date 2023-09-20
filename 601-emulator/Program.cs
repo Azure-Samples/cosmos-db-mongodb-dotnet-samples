@@ -15,11 +15,11 @@ var database = client.GetDatabase("cosmicworks");
 var collection = database.GetCollection<dynamic>("products");
 // </resources>
 
-// <upsert>
+// <insert>
 var item = new
 {
     name = "Kiama classic surfboard"
 };
 
 await collection.InsertOneAsync(item);
-// </upsert>
+// </insert>
