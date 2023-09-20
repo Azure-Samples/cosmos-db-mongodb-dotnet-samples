@@ -1,5 +1,5 @@
-// <types>
+// <entity>
 public record Product(
     string Name
 );
-// </types>
+// </entity>
