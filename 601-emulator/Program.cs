@@ -1,5 +1,4 @@
 ﻿// <imports>
-using System.Runtime.CompilerServices;
 using MongoDB.Driver;
 // </imports>
 
@@ -12,13 +11,14 @@ var client = new MongoClient(
 // <resources>
 var database = client.GetDatabase("cosmicworks");
 
-var collection = database.GetCollection<Product>("products");
+var collection = database.GetCollection<dynamic>("products");
 // </resources>
 
-// <upsert>
-Product item = new(
-    Name: "Kiama classic surfboard"
-);
+// <insert>
+var item = new
+{
+    name = "Kiama classic surfboard"
+};
 
 await collection.InsertOneAsync(item);
-// </upsert>
+// </insert>
